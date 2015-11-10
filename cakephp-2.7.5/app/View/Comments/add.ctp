@@ -1,13 +1,10 @@
-<div class="users form">
-<?php echo $this->Form->create('User'); ?>
+<div class="comments form">
+<?php echo $this->Form->create('Comment'); ?>
 	<fieldset>
-		<legend><?php echo __('Add User'); ?></legend>
+		<legend><?php echo __('Add Comment'); ?></legend>
 	<?php
-		echo $this->Form->input('name');
-		echo $this->Form->input('last_name');
-		echo $this->Form->input('user_name');
-		echo $this->Form->input('password');
-		echo $this->Form->input('email');
+		echo $this->Form->input('snippet_id');
+		echo $this->Form->input('comment');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>
@@ -16,7 +13,7 @@
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 
-		<li><?php echo $this->Html->link(__('List Users'), array('action' => 'index')); ?></li>
+		<li><?php echo $this->Html->link(__('List Comments'), array('action' => 'index')); ?></li>
 		<li><?php echo $this->Html->link(__('List Snippets'), array('controller' => 'snippets', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Snippet'), array('controller' => 'snippets', 'action' => 'add')); ?> </li>
 	</ul>
