@@ -9,6 +9,7 @@
 			<th><?php echo $this->Paginator->sort('dislikes'); ?></th>
 			<th><?php echo $this->Paginator->sort('language'); ?></th>
 			<th><?php echo $this->Paginator->sort('description'); ?></th>
+			<th><?php echo $this->Paginator->sort('content'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	</thead>
@@ -23,6 +24,7 @@
 		<td><?php echo h($snippet['Snippet']['dislikes']); ?>&nbsp;</td>
 		<td><?php echo h($snippet['Snippet']['language']); ?>&nbsp;</td>
 		<td><?php echo h($snippet['Snippet']['description']); ?>&nbsp;</td>
+		<td><?php echo h($snippet['Snippet']['content']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $snippet['Snippet']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $snippet['Snippet']['id'])); ?>

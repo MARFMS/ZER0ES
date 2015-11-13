@@ -31,6 +31,11 @@
 			<?php echo h($snippet['Snippet']['description']); ?>
 			&nbsp;
 		</dd>
+		<dt><?php echo __('Content'); ?></dt>
+		<dd>
+			<?php echo h($snippet['Snippet']['content']); ?>
+			&nbsp;
+		</dd>
 	</dl>
 </div>
 <div class="actions">
