@@ -1,0 +1,35 @@
+Layouts
+
+- Login page
+   -Logo
+   - Username
+   - Password
+   - Ok button
+
+- Dashboard
+  - Snippest
+  - Barra de navegación
+
+- Perfil
+  - Información Personal
+  - Estadísticas del usuario (Blocks)
+
+- Editar perfil
+  - Editar los datos que están en la base de datos
+- Busqueda
+  
+- Snippet
+  - Encabezado
+  - Código
+  - Likes/Dislikes
+  - Publicaciones similares
+  - Comentarios (pueden mantener una solución alternativa)
+  - Compartir en redes sociales
+  - Borrar
+
+- Agregar/editar Snippet
+  - Modal (formulario)
+  - Descripción
+  - Contenido
+  - Lenguaje
+  - Etiquetas (3 al menos)
