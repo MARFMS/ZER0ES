@@ -13,7 +13,7 @@ class UsersController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator');
+	public $components = array('Paginator', 'Flash', 'Session');
 
 /**
  * index method
@@ -47,10 +47,25 @@ class UsersController extends AppController {
  */
 	public function add() {
 		if ($this->request->is('post')) {
+			$filename = null;
+            if ( !empty($this->request->data['User']['image_file']['tmp_name'])
+                && is_uploaded_file($this->request->data['User']['image_file']['tmp_name']) ) {
+                $filename = time() . '-' . basename($this->request->data['User']['image_file']['name']);
+                move_uploaded_file(
+                    $this->data['User']['image_file']['tmp_name'],
+                    WWW_ROOT . DS . 'img/user_imgs' . DS . $filename
+                );
+            } else {
+				// no se definio una imagen
+				$filename = 'placeholder.png';
+			}
+            
+			$this->request->data['User']['image'] = $filename;
+
 			$this->User->create();
 			if ($this->User->save($this->request->data)) {
 				$this->Flash->success(__('The user has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'index'));		// cambiar luego
 			} else {
 				$this->Flash->error(__('The user could not be saved. Please, try again.'));
 			}

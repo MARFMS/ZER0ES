@@ -31,6 +31,13 @@
 			<?php echo h($user['User']['email']); ?>
 			&nbsp;
 		</dd>
+		<dt><?php echo __('Image'); ?></dt>
+		<dd>
+			<?php if ( $user['User']['image'] != null ): ?>
+				<?php echo $this->Html->image('user_imgs/' . $user['User']['image'], array('alt' => 'CakePHP', 'style'=>'height:250px; width:250px; float:left;')); ?>
+			<?php endif; ?>
+			&nbsp;
+		</dd>
 	</dl>
 </div>
 <div class="actions">
@@ -55,6 +62,7 @@
 		<th><?php echo __('Dislikes'); ?></th>
 		<th><?php echo __('Language'); ?></th>
 		<th><?php echo __('Description'); ?></th>
+		<th><?php echo __('Content'); ?></th>
 		<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	<?php foreach ($user['Snippet'] as $snippet): ?>
@@ -65,6 +73,7 @@
 			<td><?php echo $snippet['dislikes']; ?></td>
 			<td><?php echo $snippet['language']; ?></td>
 			<td><?php echo $snippet['description']; ?></td>
+			<td><?php echo $snippet['content']; ?></td>
 			<td class="actions">
 				<?php echo $this->Html->link(__('View'), array('controller' => 'snippets', 'action' => 'view', $snippet['id'])); ?>
 				<?php echo $this->Html->link(__('Edit'), array('controller' => 'snippets', 'action' => 'edit', $snippet['id'])); ?>
