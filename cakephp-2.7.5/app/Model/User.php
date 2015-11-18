@@ -1,5 +1,6 @@
 <?php
 App::uses('AppModel', 'Model');
+App::uses('BlowfishPasswordHasher', 'Controller/Component/Auth');
 /**
  * User Model
  *
@@ -125,5 +126,17 @@ class User extends AppModel {
 			'counterQuery' => ''
 		)
 	);
-
+/*
+* Hash password, so it is not stored as plain text in our database
+*
+*/
+	public function beforeSave($options = array()) {
+		if (isset($this->data[$this->alias]['password'])) {
+			$passwordHasher = new BlowfishPasswordHasher();
+			$this->data[$this->alias]['password'] = $passwordHasher->hash(
+				$this->data[$this->alias]['password']
+			);
+		}
+		return true;
+	}
 }
