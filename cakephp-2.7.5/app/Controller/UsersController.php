@@ -20,7 +20,7 @@ class UsersController extends AppController {
 	public function login() {
 		if ($this->request->is('post')) {
 			if ($this->Auth->login()) {
-				return $this->redirect($this->Auth->redirectUrl());
+				return $this->redirect(array('controller'=>'pages','action'=>'display'));
 			}
 			$this->Flash->error(__('Invalid username or password, try again'));
 		}
