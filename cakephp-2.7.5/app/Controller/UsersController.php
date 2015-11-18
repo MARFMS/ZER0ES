@@ -7,11 +7,30 @@ App::uses('AppController', 'Controller');
  * @property PaginatorComponent $Paginator
  */
 class UsersController extends AppController {
-
+/*
+*Before filter give access to add an logout users
+*/
 	public function beforeFilter() {
         parent::beforeFilter();
-        $this->Auth->allow('add');
+        $this->Auth->allow('add', 'logout');
     }
+/*
+* Public function login, give access to administrative layout
+*/
+	public function login() {
+		if ($this->request->is('post')) {
+			if ($this->Auth->login()) {
+				return $this->redirect($this->Auth->redirectUrl());
+			}
+			$this->Flash->error(__('Invalid username or password, try again'));
+		}
+	}
+/*
+* Logout, exit program
+*/
+	public function logout() {
+		return $this->redirect($this->Auth->logout());
+	}
 
 /**
  * Components
