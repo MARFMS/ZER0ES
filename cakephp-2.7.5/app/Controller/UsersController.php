@@ -12,7 +12,7 @@ class UsersController extends AppController {
 */
 	public function beforeFilter() {
         parent::beforeFilter();
-        $this->Auth->allow('add', 'logout');
+        $this->Auth->allow('all', 'add', 'logout');
     }
 /*
 * Public function login, give access to administrative layout
@@ -29,7 +29,9 @@ class UsersController extends AppController {
 * Logout, exit program
 */
 	public function logout() {
-		return $this->redirect($this->Auth->logout());
+		$this->Auth->logout();
+		$this->autorender=false;
+		return $this->redirect(array('controller'=>'pages','action'=>'display','home'));
 	}
 
 /**
