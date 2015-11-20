@@ -109,7 +109,7 @@ CREATE TABLE `users` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(30) DEFAULT NULL,
   `last_name` varchar(30) DEFAULT NULL,
-  `user_name` varchar(30) DEFAULT NULL,
+  `username` varchar(30) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
   `image` varchar(100) DEFAULT NULL,
