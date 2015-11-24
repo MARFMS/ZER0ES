@@ -68,7 +68,7 @@ CREATE TABLE `snippets` (
 
 LOCK TABLES `snippets` WRITE;
 /*!40000 ALTER TABLE `snippets` DISABLE KEYS */;
-INSERT INTO `snippets` VALUES (1,1,4,2,'Java','System.out.println(\"Hello, World\");',NULL);
+INSERT INTO `snippets` VALUES (1,1,4,2,'Java','Hello World','System.out.println(\"Hello, World\");');
 /*!40000 ALTER TABLE `snippets` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -112,6 +112,7 @@ CREATE TABLE `users` (
   `user_name` varchar(30) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
+  `image` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -122,7 +123,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Asd','Asd','asd','asd','asd@asd.com');
+INSERT INTO `users` VALUES (1,'Asd','Asd','asd','asd','asd@asd.com','placeholder.png');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

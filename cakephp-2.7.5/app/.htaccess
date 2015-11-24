@@ -1,6 +1,6 @@
 <IfModule mod_rewrite.c>
 	RewriteEngine on
-	RewriteBase /zero/ZER0ES/cakephp-2.7.5/
+	RewriteBase /~eb15594/hw/proyecto/repos/MAE/cakephp-2.7.5/
 	RewriteRule ^$ webroot/ [L]
 	RewriteRule (.*) webroot/$1 [L]
 </IfModule>
