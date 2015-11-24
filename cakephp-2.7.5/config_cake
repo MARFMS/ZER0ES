@@ -1,0 +1,5 @@
+#!/bin/bash
+
+mkdir app/tmp
+chmod -R 777 app/tmp
+
