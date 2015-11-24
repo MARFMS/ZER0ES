@@ -1,6 +1,10 @@
 <IfModule mod_rewrite.c>
 	RewriteEngine On
+<<<<<<< HEAD
+	RewriteBase /~eb15594/hw/proyecto/repos/Carolina/cakephp-2.7.5/
+=======
 	RewriteBase /~eb15594/hw/proyecto/repos/ZER0ES/cakephp-2.7.5/
+>>>>>>> master
 	RewriteCond %{REQUEST_FILENAME} !-d
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteRule ^ index.php [L]
