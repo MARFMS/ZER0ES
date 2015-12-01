@@ -7,6 +7,6 @@
 		<pre><?php echo h($snippet['Snippet']['language']); ?>&nbsp;</pre>
 		<pre><?php echo h($snippet['Snippet']['description']); ?>&nbsp;</pre>
 		<pre><?php echo h($snippet['Snippet']['content']); ?>&nbsp;</pre>
-		<br/><br/><br/><br/>
+		<br/><br/>
 <?php endforeach; ?>
 </div>

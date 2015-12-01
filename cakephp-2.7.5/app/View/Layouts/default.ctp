@@ -28,7 +28,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	<?php
 		echo $this->Html->meta('icon');
 
-		echo $this->Html->css(array ('materialize.css', 'zeroes.css',));
+		echo $this->Html->css(array ('materialize.css', 'zeroes.css', 'cake.generic'));
 		echo $this->Html->script(array ('https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js','bootstrap.min.js'));
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
