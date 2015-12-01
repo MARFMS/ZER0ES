@@ -1,4 +1,4 @@
-<div>
+<div class="snippets index">
 	<?php foreach ($snippets as $snippet): ?>
 		<pre><?php echo h($snippet['Snippet']['id']); ?>&nbsp;</pre>
 		<pre>

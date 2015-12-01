@@ -9,6 +9,7 @@
 		echo $this->Form->input('language');
 		echo $this->Form->input('description');
 		echo $this->Form->input('content');
+        echo $this->Paginator->sort('content');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>
