@@ -22,14 +22,18 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<title>
-		<?php echo $cakeDescription ?>:
+		<?php echo "ZER0ES" ?>:
 		<?php echo $this->fetch('title'); ?>
 	</title>
 	<?php
 		echo $this->Html->meta('icon');
 
-		echo $this->Html->css(array ('materialize.css', 'zeroes.css', 'cake.generic'));
-		echo $this->Html->script(array ('https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js','bootstrap.min.js'));
+		echo $this->Html->css(array ('materialize.css', 'cake.generic', 'zeroes.css'));
+		echo $this->Html->css(array ('syntax/shCore.css', 'syntax/shCoreDefault.css', 'syntax/shThemeDefault.css'));
+        echo $this->Html->script(array ('https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js','bootstrap.min.js'));
+		echo $this->Html->script(array ('syntax/shCore.js', 'syntax/shBrushPython.js'));
+		echo $this->Html->script(array ('syntax/shBrushPlain.js', 'syntax/shBrushJava.js'));
+		echo '<script type="text/javascript">SyntaxHighlighter.all(); SyntaxHighlighter.defaults.toolbar = false;</script>';
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
@@ -41,20 +45,13 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	<div class="nav-wrapper grey darken-2">
 	  <a href="#" class="brand-logo" id="code">ZER0ES</a>
 	  <ul id="nav-mobile" class="right hide-on-med-and-down">
-	    <li><a href="sass.html">Home</a></li>
 	  </ul>
 	</div>
 	</nav>
 	<div id="container">
-		<div id="header">
-
-		</div>
 		<div id="content">
 			<?php echo $this->Flash->render(); ?>
 			<?php echo $this->fetch('content'); ?>
-		</div>
-		<div id="footer">
-
 		</div>
 	</div>
 </body>
