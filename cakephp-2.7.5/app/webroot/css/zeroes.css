@@ -7,16 +7,62 @@ body{
     background-color: grey;
 }
 
+.username {
+    font-size: 14px;
+    font-family: 'Atlas Mono Regular';
+}
+
+.description {
+    font-family: 'Atlas Sans Bold';
+    font-size: 15px;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 .snippet_entry{
-    padding: 20px;
-    margin-left: 100px;
-    margin-right: 100px;
-    margin-bottom: 10px;
-    background-color: white;
+    padding: 7px;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-bottom: 25px;
+    background-color: grey;
 }
 
 .snippet_content {
-    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #ffffff;
+}
+
+.snippet_code {/*
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 2px;
+    margin-right: 2px;*/
+    border-radius: 0px 0px 0px 0px;
+    -moz-border-radius: 0px 0px 0px 0px;
+    -webkit-border-radius: 0px 0px 0px 0px;
+    border: 0.5px solid #eee;
+}
+
+.snippet_info{
+    background-color: #fff;
+    margin-top: 25px;
+    color: grey;
+}
+
+.container {
+    background-color: white;
+    width: 90%;
 }
 
 #code {
@@ -28,19 +74,47 @@ pre {
 }
 
 #content {
-    background-color: #bbb;
+    background-color: #ccc;
 }
 
 #entry_border {
     border-radius: 28px 28px 28px 28px;
     -moz-border-radius: 28px 28px 28px 28px;
     -webkit-border-radius: 28px 28px 28px 28px;
-    border: 1px dotted #363636;
+    border: 2px dashed #666;
 }
 
 #content_border {
-    border-radius: 0px 0px 0px 0px;
-    -moz-border-radius: 0px 0px 0px 0px;
-    -webkit-border-radius: 0px 0px 0px 0px;
-    border: 1px dashed #000000;
+    border-radius: 8px 8px 8px 8px;
+    -moz-border-radius: 8px 8px 8px 8px;
+    -webkit-border-radius: 8px 8px 8px 8px;
+    border: 2px dashed #ddd;
+}
+
+/*
+** Font faces
+*/
+@font-face {
+    font-family: 'Atlas Sans Regular';
+    src: url("../font/atlas/AtlasGroteskWebRegular.ttf");
+}
+
+@font-face {
+    font-family: 'Atlas Sans Black';
+    src: url("../font/atlas/AtlasGroteskWebBlack.ttf");
+}
+
+@font-face {
+    font-family: 'Atlas Sans Bold';
+    src: url("../font/atlas/AtlasGroteskWebBold.ttf");
+}
+
+@font-face {
+    font-family: 'Atlas Mono Black';
+    src: url("../font/atlas/AtlasTypewriterWebBlack.ttf");
+}
+
+@font-face {
+    font-family: 'Atlas Mono Regular';
+    src: url("../font/atlas/AtlasTypewriterWebRegular.ttf");
 }

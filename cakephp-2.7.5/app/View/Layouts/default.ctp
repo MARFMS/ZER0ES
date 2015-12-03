@@ -34,6 +34,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		echo $this->Html->script(array ('syntax/shCore.js', 'syntax/shBrushPython.js'));
 		echo $this->Html->script(array ('syntax/shBrushPlain.js', 'syntax/shBrushJava.js'));
 		echo '<script type="text/javascript">SyntaxHighlighter.all(); SyntaxHighlighter.defaults.toolbar = false;</script>';
+        echo '<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">';
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');

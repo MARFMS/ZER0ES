@@ -22,4 +22,8 @@
     function hi(){
         return "Hello, world!";
     }
+
+    function bracketize($str){
+        return "[" . $str . "]";
+    }
 ?>

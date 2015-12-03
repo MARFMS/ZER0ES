@@ -7,7 +7,7 @@
  *
  * @version
  * 3.0.83 (July 02 2010)
- * 
+ *
  * @copyright
  * Copyright (C) 2004-2010 Alex Gorbatchev.
  *
@@ -36,10 +36,10 @@
   color: #afafaf !important;
 }
 .syntaxhighlighter .gutter .line {
-  border-right: 3px solid #6ce26c !important;
+  border-right: 3px solid #bbbbbb !important;
 }
 .syntaxhighlighter .gutter .line.highlighted {
-  background-color: #6ce26c !important;
+  background-color: #bbbbbb !important;
   color: white !important;
 }
 .syntaxhighlighter.printing .line .content {
@@ -51,7 +51,7 @@
 .syntaxhighlighter.collapsed .toolbar {
   color: blue !important;
   background: white !important;
-  border: 1px solid #6ce26c !important;
+  border: 1px solid #bbbbbb !important;
 }
 .syntaxhighlighter.collapsed .toolbar a {
   color: blue !important;
@@ -61,7 +61,7 @@
 }
 .syntaxhighlighter .toolbar {
   color: white !important;
-  background: #6ce26c !important;
+  background: #bbbbbb !important;
   border: none !important;
 }
 .syntaxhighlighter .toolbar a {
