@@ -23,7 +23,7 @@ class SnippetsController extends AppController {
  * @return void
  */
 	public function index() {
-		$this->Snippet->recursive = 0;
+		$this->Snippet->recursive = 2;
 		$this->set('snippets', $this->Paginator->paginate());
 	}
 
@@ -114,7 +114,7 @@ class SnippetsController extends AppController {
  * @return void
  */
 	public function admin_index() {
-		$this->Snippet->recursive = 0;
+		$this->Snippet->recursive = 2;
 		$this->set('snippets', $this->Paginator->paginate());
 	}
 
