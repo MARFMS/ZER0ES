@@ -1,21 +1,24 @@
 <?php require_once("snippets.php") ?>
 <?php $this->assign('title', 'Index'); ?>
 <div>
-	<?php foreach ($snippets as $snippet): ?>
-		<div class="snippet_entry" id="entry_border">
+      <?php foreach ($snippets as $snippet): ?>
+            <div class="snippet_entry" id="entry_border">
 			<div class="snippet_content" id="content_border">
 				<?php
 					// Retrieve all the values
 					$id   		 = 	h($snippet['Snippet']['id']);	// Not necessary
 					$user 		 = 	$this->Html->link(bracketize($snippet['User']['username']), array('controller' => 'users', 'action' => 'view', $snippet['User']['id']));
 					$likes 		 = 	h($snippet['Snippet']['likes']);
-					$dislikes 	 =	h($snippet['Snippet']['dislikes']);
-					$language    =  h($snippet['Snippet']['language']);
-					$description =  h($snippet['Snippet']['description']);
-					$content     =  h($snippet['Snippet']['content']);
-					$username	 = 	bracketize($snippet['User']['username']);
-					$syntax 	 = 	which_language($snippet['Snippet']['language']);
+					$dislikes 	       =	h($snippet['Snippet']['dislikes']);
+					$language          =    h($snippet['Snippet']['language']);
+					$description       =    h($snippet['Snippet']['description']);
+					$content           =    h($snippet['Snippet']['content']);
+					$username	       = 	bracketize($snippet['User']['username']);
+					$syntax 	       = 	which_language($snippet['Snippet']['language']);
  					$image 		 = 	"user_imgs/" . $snippet['User']['image'];
+
+                              $comments    =    $snippet['Comment'];
+                              var_dump($comments);
 				?>
 				<!--<p><?php echo  $id 	         ?>&nbsp;</p>-->
                         <div class="container">
