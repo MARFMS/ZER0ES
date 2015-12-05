@@ -14,8 +14,8 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
-$cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
+//$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
+//$cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 ?>
 <!DOCTYPE html>
 <html>
@@ -27,8 +27,8 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	</title>
 	<?php
 		echo $this->Html->meta('icon');
-
-		echo $this->Html->css(array ('materialize.css', 'cake.generic', 'zeroes.css'));
+		//'materialize.css',
+		echo $this->Html->css(array ('cake.generic', 'zeroes.css','bootstrap-theme.min.css','bootstrap.min.css'));
 		echo $this->Html->css(array ('syntax/shCore.css', 'syntax/shCoreDefault.css', 'syntax/shThemeDefault.css'));
         echo $this->Html->script(array ('https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js','bootstrap.min.js'));
 		echo $this->Html->script(array ('syntax/shCore.js', 'syntax/shBrushPython.js'));
@@ -41,19 +41,8 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	?>
 </head>
 <body>
-
-	<nav>
-	<div class="nav-wrapper grey darken-2">
-	  <a href="#" class="brand-logo" id="code">ZER0ES</a>
-	  <ul id="nav-mobile" class="right hide-on-med-and-down">
-	  </ul>
-	</div>
-	</nav>
-	<div id="container">
-		<div id="content">
-			<?php echo $this->Flash->render(); ?>
-			<?php echo $this->fetch('content'); ?>
-		</div>
-	</div>
+	<?php echo $this->element('menu')?>		
+	<?php echo $this->Flash->render(); ?>
+	<?php echo $this->fetch('content'); ?>	
 </body>
 </html>

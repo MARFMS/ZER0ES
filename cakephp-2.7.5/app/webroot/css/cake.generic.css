@@ -15,12 +15,14 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
+ /*
 * {
 	margin:0;
 	padding:0;
 }
-
+*/
 /** General Style Info **/
+/**
 body {
 	background: #003d4c;
 	color: #fff;
@@ -70,8 +72,9 @@ ul, li {
 p {
 	margin: 0 0 1em 0;
 }
-
+*//
 /** Layout **/
+/**
 #container {
 	text-align: left;
 }
@@ -113,8 +116,9 @@ p {
 #cake-powered {
 	float: right;
 }
-
+**/
 /** containers **/
+/*
 div.form,
 div.index,
 div.view {
@@ -133,8 +137,9 @@ div.actions h3 {
 	color:#777;
 }
 
-
+*/
 /** Tables **/
+/**
 table {
 	border-right:0;
 	clear: both;
@@ -176,7 +181,7 @@ table td.actions a {
 	margin: 0 6px;
 	padding:2px 5px;
 }
-
+**/
 /* SQL log */
 .cake-sql-log {
 	background: #fff;
@@ -235,6 +240,7 @@ table td.actions a {
 }
 
 /** Scaffold View **/
+/*
 dl {
 	line-height: 2em;
 	margin: 0em 0em;
@@ -256,8 +262,9 @@ dd {
 	margin-top: -2em;
 	vertical-align: top;
 }
-
+*/
 /** Forms **/
+/**
 form {
 	clear: both;
 	margin-right: 20px;
@@ -369,7 +376,7 @@ form .submit input[type=submit] {
 }
 form .submit input[type=submit]:hover {
 	background: #5BA150;
-}
+}**/
 /* Form errors */
 form .error {
 	background: #FFDACC;
