@@ -21,7 +21,12 @@
 		  </ul>
 		</li>
 		<li><a href="<?php echo $this->Html->url(array('controller' => 'users','action'=>'logout'));?>">Logout</a></li>
-	  </ul>          
+	  </ul>  
+	  <ul class="nav navbar-nav navbar-right">
+            <li><a href="../navbar/">Default</a></li>
+            <li class="active"><a href="./">Static top <span class="sr-only">(current)</span></a></li>
+            <li><a href="../navbar-fixed-top/">Fixed top</a></li>
+          </ul>
 	</div>
   </div>
 </nav> 
