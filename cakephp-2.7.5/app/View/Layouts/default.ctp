@@ -41,7 +41,14 @@
 	?>
 </head>
 <body>
-	<?php echo $this->element('authmenu')?>		
+	<?php
+		if (!$authUser) {
+		    echo $this->element('menu');
+		} else {
+			echo $this->element('authmenu');
+		}
+	?>
+	
 	<?php echo $this->Flash->render(); ?>
 	<?php echo $this->fetch('content'); ?>	
 </body>

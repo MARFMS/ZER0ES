@@ -49,6 +49,7 @@ class SnippetsController extends AppController {
  */
 	public function add() {
 		if ($this->request->is('post')) {
+			$this->request->data['Snippet']['user_id'] = $this->Auth->user('id');
 			$this->Snippet->create();
 			if ($this->Snippet->save($this->request->data)) {
 				$this->Flash->success(__('The snippet has been saved.'));
@@ -198,4 +199,24 @@ class SnippetsController extends AppController {
 		}
 		return $this->redirect(array('action' => 'index'));
 	}
+
+	public function isAuthorized($user) {
+	    // All registered users can add snippets
+	    if ($this->action === 'add') {
+	        return true;
+	    }
+
+	    // The owner of a snippet can edit and delete it
+	    if (in_array($this->action, array('edit', 'delete'))) {
+	        $snippetId = (int) $this->request->params['pass'][0];
+	        if ($this->Snippet->isOwnedBy($snippetId, $user['id'])) {
+	            return true;
+	        }
+	    }
+
+	    return parent::isAuthorized($user);
+	}
+
+
+
 }

@@ -49,6 +49,7 @@ class CommentsController extends AppController {
  */
 	public function add() {
 		if ($this->request->is('post')) {
+			$this->request->data['Comment']['user_id'] = $this->Auth->user('id');
 			$this->Comment->create();
 			if ($this->Comment->save($this->request->data)) {
 				$this->Flash->success(__('The comment has been saved.'));
@@ -197,5 +198,22 @@ class CommentsController extends AppController {
 			$this->Flash->error(__('The comment could not be deleted. Please, try again.'));
 		}
 		return $this->redirect(array('action' => 'index'));
+	}
+
+	public function isAuthorized($user) {
+	    // All registered users can add comments
+	    if ($this->action === 'add') {
+	        return true;
+	    }
+
+	    // The owner of a comment can edit and delete it
+	    if (in_array($this->action, array('edit', 'delete'))) {
+	        $commentId = (int) $this->request->params['pass'][0];
+	        if ($this->Comment->isOwnedBy($commentId, $user['id'])) {
+	            return true;
+	        }
+	    }
+
+	    return parent::isAuthorized($user);
 	}
 }

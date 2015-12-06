@@ -145,4 +145,8 @@ class Snippet extends AppModel {
 		)
 	);
 
+	public function isOwnedBy($snippet, $user) {
+	    return $this->field('id', array('id' => $snippet, 'user_id' => $user)) !== false;
+	}
+
 }

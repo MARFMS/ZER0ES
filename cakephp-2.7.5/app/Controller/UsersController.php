@@ -7,16 +7,24 @@ App::uses('AppController', 'Controller');
  * @property PaginatorComponent $Paginator
  */
 class UsersController extends AppController {
+/**
+ * Components
+ *
+ * @var array
+ */
+	public $components = array('Paginator', 'Flash', 'Session');
+
 /*
-*Before filter give access to add an logout users
-*/
+ *Before filter give access to add an logout users
+ */
 	public function beforeFilter() {
         parent::beforeFilter();
-        $this->Auth->allow('all', 'add', 'logout');
+        $this->Auth->allow('add', 'logout', 'login');
     }
+
 /*
-* Public function login, give access to administrative layout
-*/
+ * Public function login, give access to administrative layout
+ */
 	public function login() {
 		if ($this->request->is('post')) {
 			if ($this->Auth->login()) {
@@ -25,21 +33,17 @@ class UsersController extends AppController {
 			$this->Flash->error(__('Invalid username or password, try again'));
 		}
 	}
+
 /*
-* Logout, exit program
-*/
+ * Logout, exit program
+ */
 	public function logout() {
 		$this->Auth->logout();
-		$this->autorender=false;
-		return $this->redirect(array('controller'=>'pages','action'=>'display','home'));
+		$this->autorender = false;
+		$this->Flash->success(__('You have logged out.'));
+		return $this->redirect(array('controller'=>'snippets','action'=>'index'));
 	}
 
-/**
- * Components
- *
- * @var array
- */
-	public $components = array('Paginator', 'Flash', 'Session');
 
 /**
  * index method
