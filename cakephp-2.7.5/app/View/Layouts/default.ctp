@@ -41,7 +41,7 @@
 	?>
 </head>
 <body>
-	<?php echo $this->element('menu')?>		
+	<?php echo $this->element('authmenu')?>		
 	<?php echo $this->Flash->render(); ?>
 	<?php echo $this->fetch('content'); ?>	
 </body>
