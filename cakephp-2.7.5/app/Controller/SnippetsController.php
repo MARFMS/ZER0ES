@@ -110,6 +110,30 @@ class SnippetsController extends AppController {
 		}
 		return $this->redirect(array('action' => 'index'));
 	}
+	
+	public function search() {
+		$search_text = $this->request->data['search-text'];
+		$tokens = array();
+		$token = strtok($search_text, " ");
+		
+		while ($token !== false) {
+			array_push($tokens, strtolower($token));
+			$token = strtok(" ");
+		}
+
+		$results = array();
+
+		for ($i= 0; $i<count($tokens); ++$i) {
+			$result = $this->Snippet->find('all', array(
+				'conditions' => array('Snippet.language' => $tokens[$i])
+			));
+			$results = array_merge($results, $result);
+		}
+
+		
+
+		$this->set('snippets', $results);
+	}
 
 /**
  * admin_index method
