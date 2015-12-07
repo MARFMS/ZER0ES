@@ -4,22 +4,22 @@
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">		
 			</button>
 			<a class="navbar-brand" href="<?php echo $this->Html->url(array('controller' => 'pages','action'=>'display'));?>"> ZER0ES </a>	
-			<?php echo $this->Form->create('User', array('url' => array('controller' => 'snippets', 'action' => 'add'),'class'=>'navbar-form navbar-right'));					
-				echo $this->Form->input(' ', array('class' => 'form-control','placeholder' => 'Search snippet...'));
-				$options = array(
-					'label' => 'search',
-					'div' => array(
-						'class' => 'btn'
-					)
-				);
-			echo $this->Form->end($options); ?>			
-		</div>			
-		<?php if($this->Session->read('User.user')){?>
-		<?php $photo = $this->Session->read('User.photo');?>				
-		<div id="navbar" class="navbar-collapse collapse">		
+					
+		</div>		
+		<div id="navbar" class="navbar-collapse collapse">	
+			<ul class="nav navbar-nav navbar-left mn_search">
+				<li>
+					<?php echo $this->Form->create('User', array('url' => array('controller' => 'snippets', 'action' => 'add'),'class'=>'navbar-form navbar-right'));					
+					echo $this->Form->input(' ', array('class' => 'form-control','placeholder' => 'Search snippet...'));
+					$options = array('label' => 'search','div' => array('class' => 'btn'));
+					echo $this->Form->end($options); ?>	
+				</li>
+			</ul>
+			<?php if($this->Session->read('User.user')){?>
+			<?php $photo = $this->Session->read('User.photo');?>						
 			<ul class="nav navbar-nav navbar-right mn_img"> 
 				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <img src="<?php echo  $this->webroot.'img/user_imgs/'.$photo; ?>"> <span class="caret"></span></a>
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="false"> <img src="<?php echo  $this->webroot.'img/user_imgs/'.$photo; ?>"> <span class="caret"></span></a>
 					<ul role="menu" class="dropdown-menu">
 						<li><a href="<?php echo $this->Html->url(array('controller' => 'users','action'=>'profile'));?>">Profile</a></li>                
 						<li role="separator" class="divider"></li>                

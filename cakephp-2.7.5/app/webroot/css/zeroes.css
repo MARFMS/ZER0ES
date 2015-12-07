@@ -5,6 +5,8 @@ html {
 body{
     font-size: 12px;
     background-color: rgb(221,221,211);
+	min-height: 400px;
+	padding-top: 90px;  
 }
 
 .username {
@@ -63,11 +65,6 @@ a:hover {
 .container {
     background-color: white;
     width: 90%;
-}
-
-body {
-  min-height: 400px;
-  padding-top: 90px;  
 }
 
 #code {
@@ -180,7 +177,7 @@ pre {
     border-radius: 50%;
 	vertical-align: middle;
 }
-.am-top-header .navbar-collapse .navbar-nav>li.dropdown .dropdown-menu:after {
+.am-top-header .navbar-collapse .mn_img li.dropdown .dropdown-menu:after {
     border-bottom: 8px solid #fff;
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
@@ -191,26 +188,26 @@ pre {
     margin-left: -6px;
     position: absolute;
 }
-.am-top-header .navbar-collapse .navbar-nav>li.dropdown .dropdown-menu>li>a {
+.am-top-header .navbar-collapse .mn_img li.dropdown .dropdown-menu li a {
     font-size: 14px;
     font-weight: 300;
     color: #504e4e;
     padding: 10px 20px;
     min-width: 175px;
 }
-.dropdown-menu>li>a {
+.dropdown-menu li a {
     font-weight: 300;
     color: #504e4e;
     padding: 9px 20px;
 }
-.dropdown-menu>li>a {
+.dropdown-menu i a {
     display: block;
 }
-.btn, .dropdown-header, .dropdown-menu>li>a {
+.btn, .dropdown-header, .dropdown-menu li a {
     line-height: 1.42857143;
     white-space: nowrap;
 }
-nav.navbar .navbar-header .navbar-form .text {
+nav.navbar .navbar-collapse .mn_search .navbar-form .text {
     display: inline-block;
 }
 
