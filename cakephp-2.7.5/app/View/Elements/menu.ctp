@@ -9,8 +9,8 @@
 		<div id="navbar" class="navbar-collapse collapse">	
 			<ul class="nav navbar-nav navbar-left mn_search">
 				<li>
-					<?php echo $this->Form->create('User', array('url' => array('controller' => 'snippets', 'action' => 'add'),'class'=>'navbar-form navbar-right'));					
-					echo $this->Form->input(' ', array('class' => 'form-control','placeholder' => 'Search snippet...'));
+					<?php echo $this->Form->create('User', array('url' => array('controller' => 'snippets', 'action' => 'search'), 'class'=>'navbar-form navbar-right'));					
+					echo $this->Form->input(' ', array('class' => 'form-control','placeholder' => 'Search snippet...', 'name' => 'search-text'));
 					$options = array('label' => 'search','div' => array('class' => 'btn'));
 					echo $this->Form->end($options); ?>	
 				</li>
