@@ -12,14 +12,11 @@ body{
 .username {
     font-size: 14px;
     font-family: 'Atlas Mono Regular';
-    margin-left: -36px;
-    margin-top: 15px;
 }
 
 .description {
     font-family: 'Atlas Sans Bold';
     font-size: 15px;
-    margin-top: 20px;
 }
 
 a {
@@ -217,7 +214,7 @@ nav.navbar .navbar-collapse .mn_search .navbar-form .text {
 
 /*Add snippet toggle*/
 .add-snippet .toggle-snippet {
-    top: 20px;
+    top: 60px;
     font-size: 18px;
     line-height: 55px;
     text-align: center;

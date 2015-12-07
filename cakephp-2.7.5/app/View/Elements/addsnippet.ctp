@@ -1,8 +1,14 @@
 <div class="add-snippet" style="right:-280px;">
   <div class="toggle-snippet">NEW</div>
   <div class="add-info-snippet">
-	<h3>Theme Switcher</h3>
-	<p></p>
+	<h3>Snippet</h3>
+	<p>
+		vamos a colocar varas por acá
+		sdfjklskldfjklasd
+		asdfasdflñkalñsdf
+		asdfñlkasdlñfklñ!DOCTYPEasdñflk
+		asdfkñlasdklñ
+	</p>
   </div>       
 </div>
 
