@@ -3,10 +3,16 @@
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">		
 			</button>
-			<a class="navbar-brand" href="<?php echo $this->Html->url(array('controller' => 'pages','action'=>'display'));?>"> ZER0ES </a>	 
-			<form class="navbar-form navbar-right">
-				<input type="text" class="form-control" placeholder="Search snippet...">
-			</form>
+			<a class="navbar-brand" href="<?php echo $this->Html->url(array('controller' => 'pages','action'=>'display'));?>"> ZER0ES </a>	
+			<?php echo $this->Form->create('User', array('url' => array('controller' => 'snippets', 'action' => 'add'),'class'=>'navbar-form navbar-right'));					
+				echo $this->Form->input(' ', array('class' => 'form-control','placeholder' => 'Search snippet...'));
+				$options = array(
+					'label' => 'search',
+					'div' => array(
+						'class' => 'btn'
+					)
+				);
+			echo $this->Form->end($options); ?>			
 		</div>			
 		<?php if($this->Session->read('User.user')){?>
 		<?php $photo = $this->Session->read('User.photo');?>				
