@@ -78,7 +78,7 @@ class SnippetsController extends AppController {
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Snippet->save($this->request->data)) {
 				$this->Flash->success(__('The snippet has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				return $this->redirect(array('controller' => 'users', 'action' => 'profile'));
 			} else {
 				$this->Flash->error(__('The snippet could not be saved. Please, try again.'));
 			}
@@ -108,7 +108,7 @@ class SnippetsController extends AppController {
 		} else {
 			$this->Flash->error(__('The snippet could not be deleted. Please, try again.'));
 		}
-		return $this->redirect(array('action' => 'index'));
+		return $this->redirect(array('controller' => 'users', 'action' => 'profile'));
 	}
 	
 	public function search() {
