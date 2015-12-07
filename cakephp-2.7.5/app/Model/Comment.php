@@ -42,6 +42,16 @@ class Comment extends AppModel {
 		)
 	);
 
+	public $hasOne = array(
+		'User' => array(
+			'className' => 'User',
+			'foreignKey' => 'id',
+		 	'conditions' => '',
+                        'fields' => '',
+                        'order' => ''
+		)
+	);
+
 	public function isOwnedBy($comment, $user) {
 	    return $this->field('id', array('id' => $comment, 'user_id' => $user)) !== false;
 	}

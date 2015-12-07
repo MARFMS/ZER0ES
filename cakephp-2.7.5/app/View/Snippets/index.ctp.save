@@ -55,34 +55,20 @@
                               <div class="snippet_info">
                                     <div class="row">
                                           <div class="col-sm-2 center">
-						<?php echo $this->Html->link($likes . ' likes', array("controller" => "snippets", "action" => "hi")); ?>
+						<a href=c
+                                                <i class="material-icons">thumb_up</i>
+                                                <?php echo  $this->Html->link('Likes');    	 ?>&nbsp;
                                           </div>
                                           <div class="col-sm-2 center">
-						<?php echo $this->Html->link($dislikes . ' dislikes', array("controller" => "snippets", "action" => "hi")); ?>
+                                                <i class="material-icons">thumb_down</i>
+                                                <?php echo  $dislikes; 	 ?>&nbsp;
                                           </div>
                                           <div class="col-sm-2 center">
-						<?php echo $this->Html->link($dislikes . ' dislikes', array("controller" => "snippets", "action" => "hi")); ?>
+                                                <i class="material-icons">mode_comments</i>
+                                                <?php echo  h(0); 	 ?>&nbsp;
                                           </div>
                                     </div>
                               </div>
-				<script>
-					$('#snippet_<?php echo $id; ?>').collapse("hide");
-				</script>
-				<div class="container">
-					<br/>
-					<div class="row">
-						<div class="col-sm-12">
-							<button class="btn" data-toggle="collapse" data-target="#snippet_<?php echo $id; ?>">Show the comments</button>
-
-							<div class="collapse" id='snippet_<?php echo $id; ?>'>
-								<?php foreach ($comments as $comment):
-									echo $this->Html->link($comment['id'], array("controller" => "users", "action" => "view"));
-									var_dump($comment); endforeach; 
-								?>
-							</div>
-						</div>
-					</div>
-				</div>
                         </div>
 
 			</div>
