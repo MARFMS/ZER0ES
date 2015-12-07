@@ -109,7 +109,7 @@ class UsersController extends AppController {
 			$this->User->create();
 			if ($this->User->save($this->request->data)) {
 				$this->Flash->success(__('The user has been saved.'));
-				return $this->redirect(array('action' => 'index'));		// cambiar luego
+				return $this->redirect(array('controller'=>'snippets','action'=>'index'));
 			} else {
 				$this->Flash->error(__('The user could not be saved. Please, try again.'));
 			}
@@ -129,8 +129,8 @@ class UsersController extends AppController {
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->User->save($this->request->data)) {
-				$this->Flash->success(__('The user has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				$this->Flash->success(__('Your user information has been saved.'));
+				return $this->redirect(array('action' => 'profile'));
 			} else {
 				$this->Flash->error(__('The user could not be saved. Please, try again.'));
 			}
@@ -154,11 +154,12 @@ class UsersController extends AppController {
 		}
 		$this->request->allowMethod('post', 'delete');
 		if ($this->User->delete()) {
+			$this->Auth->logout();
 			$this->Flash->success(__('The user has been deleted.'));
 		} else {
 			$this->Flash->error(__('The user could not be deleted. Please, try again.'));
 		}
-		return $this->redirect(array('action' => 'index'));
+		return $this->redirect(array('controller'=>'snippets','action'=>'index'));
 	}
 
 /**

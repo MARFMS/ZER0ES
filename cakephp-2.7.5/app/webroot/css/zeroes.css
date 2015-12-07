@@ -57,7 +57,7 @@ a:hover {
 .snippet_info{
     background-color: #fff;
     margin-top: 25px;
-    color: grey;
+    color: gray;
 }
 
 .container {
@@ -98,17 +98,80 @@ pre {
 
 .cont {
     width: 800px;
-    margin: auto;
+    margin: 0 auto 25px auto;
     background-color: white;
     border: 2px dashed;
     border-radius: 10px;
+    padding: 35px;
 }
 
-.cont .user_img {
-    height:250px; 
-    width:250px; 
-    float:left;
-    margin-right: 15px;
+.cont .view .user_img {
+    border-radius: 10px;
+    height:150px; 
+    width:150px; 
+    margin: auto;
+    display: block;
+}
+
+.cont .view #user_name {
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.cont .view table {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.cont .view table th, .cont .view table td {
+    padding: 30px 40px;
+    text-align: center;
+}
+
+.cont .view table td {
+    padding-left: 100px;
+}
+
+.cont .related {
+    margin-top: 35px;
+}
+
+.cont .related table th, .cont .related table td {
+    padding: 5px;
+}
+
+.cont .actions {
+    margin-top: 35px;
+}
+
+.cont .actions table {
+    width: 100%;
+    text-align: center;
+}
+
+.cont .actions table td {
+    width: 25%;
+}
+
+.cont .actions table a {
+    margin: auto;
+    width: 75%;
+    display: block;
+}
+
+.cont .form .input {
+    margin-bottom: 20px;
+}
+
+
+.cont .form label {
+    display: block;
+}
+
+.cont .form textarea {
+    width: 100%;
+    resize: none;
 }
 
 /*
