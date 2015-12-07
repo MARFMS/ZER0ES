@@ -8,7 +8,7 @@
 	<div id="navbar" class="navbar-collapse collapse">		
 	  <ul class="nav navbar-nav navbar-right"> 	
 	  
-			<li><a href="#">Profile</a></li>
+			<li><a href="<?php echo $this->Html->url(array('controller' => 'users','action'=>'profile'));?>">Profile</a></li>
 
             <li><a href="<?php echo $this->Html->url(array('controller' => 'users','action'=>'logout'));?>">Logout</a></li>
 

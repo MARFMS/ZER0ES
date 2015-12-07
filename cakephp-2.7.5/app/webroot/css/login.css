@@ -1,5 +1,6 @@
  body {
 	background-color: #383737;
+    color: white;
  }
 
  .form-signin {
@@ -26,13 +27,26 @@
 }
 .login-title
 {
-    color: #555;
+    color: white;
     font-size: 18px;
     font-weight: 400;
     display: block;
 }
 .btn-primary {
-    color: #fff;
     background-color: #ef6262;
     border-color: #ef6262;
+}
+label {
+    width 100%;
+    display: block;
+    
+}
+
+.input {
+    margin: 20px 0;
+}
+
+.submit input {
+    display: block;
+    margin: auto;
 }

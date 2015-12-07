@@ -71,6 +71,20 @@ class UsersController extends AppController {
 	}
 
 /**
+ * profile method
+ *
+ * @throws NotFoundException
+ * @return void
+ */
+	public function profile() {
+		if (!$this->User->exists($this->Auth->user('id'))) {
+			throw new NotFoundException(__('Invalid user'));
+		}
+		$options = array('conditions' => array('User.' . $this->User->primaryKey => $this->Auth->user('id')));
+		$this->set('user', $this->User->find('first', $options));
+	}
+
+/**
  * add method
  *
  * @return void
@@ -233,4 +247,5 @@ class UsersController extends AppController {
 		}
 		return $this->redirect(array('action' => 'index'));
 	}
+
 }
