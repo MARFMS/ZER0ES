@@ -210,8 +210,34 @@ pre {
 nav.navbar .navbar-collapse .mn_search .navbar-form .text {
     display: inline-block;
 }
-
 /* menu_end*/
+
+/*Add snippet toggle*/
+.add-snippet .toggle-snippet {
+    top: 20px;
+    font-size: 18px;
+    line-height: 55px;
+    text-align: center;
+    background-color: #222;
+    cursor: pointer;
+    left: -58px;
+    width: 58px;
+    height: 60px;
+    position: absolute;
+    border-radius: 18px 0 0 70px;
+}
+.add-snippet {
+    position: fixed;
+    top: 125px;
+    right: 280px;
+    z-index: 99999999;
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    width: 280px;
+    border-radius: 3px 0 0 3px;
+}
+/* End add snippet toggle*/
 
 /*
 ** Font faces
