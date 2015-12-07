@@ -40,15 +40,8 @@
 		echo $this->fetch('script');
 	?>
 </head>
-<body>
-	<?php
-		if (!$authUser) {
-		    echo $this->element('menu');
-		} else {
-			echo $this->element('authmenu');
-		}
-	?>
-	
+<body>	
+	<?php echo $this->element('menu'); ?>
 	<?php echo $this->Flash->render(); ?>
 	<?php echo $this->fetch('content'); ?>
 </body>

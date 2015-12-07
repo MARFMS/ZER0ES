@@ -173,6 +173,17 @@ pre {
     width: 100%;
     resize: none;
 }
+/* menu */
+.am-top-header .navbar-collapse .mn_img li.dropdown a img {
+    max-width: 43px;
+    max-height: 43px;
+    border-radius: 50%;
+}
+img {
+    vertical-align: middle;
+}
+
+/* menu_end*/
 
 /*
 ** Font faces

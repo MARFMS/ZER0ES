@@ -1,30 +1,34 @@
-<nav id=menu_wrapper_visible class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-	<div class="navbar-header">
-	  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">		
-	  </button>
-	  <a class="navbar-brand" href="<?php echo $this->Html->url(array('controller' => 'pages','action'=>'display'));?>"> ZER0ES </a>	 
-	</div>
-	
-	<?php if($this->Session->read('User.user')){?>
+<nav id=menu_wrapper_visible class="navbar navbar-default navbar-fixed-top am-top-header">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">		
+			</button>
+			<a class="navbar-brand" href="<?php echo $this->Html->url(array('controller' => 'pages','action'=>'display'));?>"> ZER0ES </a>	 
+			<form class="navbar-form navbar-right">
+				<input type="text" class="form-control" placeholder="Search snippet...">
+			</form>
+		</div>			
+		<?php if($this->Session->read('User.user')){?>
+		<?php $photo = $this->Session->read('User.photo');?>				
 		<div id="navbar" class="navbar-collapse collapse">		
-		<ul class="nav navbar-nav navbar-right"> 	
-			<li><a href="#">Profile</a></li>
-            <li><a href="<?php echo $this->Html->url(array('controller' => 'users','action'=>'logout'));?>">Logout</a></li>
-		</ul>	
-		<?php 
-		$photo = $this->Session->read('User.photo');		
-		echo  $this->webroot.'img/user_imgs/'.$photo; ?>
-	  <?php }else{ ?>
+			<ul class="nav navbar-nav navbar-right mn_img"> 
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <img src="<?php echo  $this->webroot.'img/user_imgs/'.$photo; ?>"> <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Profile</a></li>                
+						<li role="separator" class="divider"></li>                
+						<li><a href="<?php echo $this->Html->url(array('controller' => 'users','action'=>'logout'));?>">Logout</a></li>                
+					</ul>
+				</li>            
+			</ul>	
+		</div>
+		<?php }else{ ?>
 		<div id="navbar" class="navbar-collapse collapse">		
-		<ul class="nav navbar-nav navbar-right"> 			
-            <li><a href="<?php echo $this->Html->url(array('controller' => 'users','action'=>'login'));?>">Login</a></li>
-			<li><a href="<?php echo $this->Html->url(array('controller' => 'users','action'=>'add'));?>">Sing Up</a></li>
-		</ul>
-	  <?php }?>
-	  <form class="navbar-form navbar-right">
-			<input type="text" class="form-control" placeholder="Search snippet...">
-	  </form>
+			<ul class="nav navbar-nav navbar-right"> 				
+				<li><a href="<?php echo $this->Html->url(array('controller' => 'users','action'=>'login'));?>">Login</a></li>
+				<li><a href="<?php echo $this->Html->url(array('controller' => 'users','action'=>'add'));?>">Sing Up</a></li>
+			</ul>
+		</div>
+	  <?php }?>	  
 	</div>
-  </div>  
 </nav> 

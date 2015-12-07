@@ -28,6 +28,10 @@ class UsersController extends AppController {
 	public function login() {
 		if ($this->request->is('post')) {
 			if ($this->Auth->login()) {
+				$name = $this->Auth->user('name');
+				$this->Session->write('User.user', $name);
+				$photo = $this->Auth->user('image');
+				$this->Session->write('User.photo', $photo);
 				return $this->redirect(array('controller'=>'pages','action'=>'display'));
 			}
 			$this->Flash->error(__('Invalid username or password, try again'));
@@ -39,6 +43,8 @@ class UsersController extends AppController {
  */
 	public function logout() {
 		$this->Auth->logout();
+		$this->Session->delete('User.user');
+		$this->Session->delete('User.photo');
 		$this->autorender = false;
 		$this->Flash->success(__('You have logged out.'));
 		return $this->redirect(array('controller'=>'snippets','action'=>'index'));
