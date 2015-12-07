@@ -28,9 +28,10 @@
 	<?php
 		echo $this->Html->meta('icon');
 		//'materialize.css',
-		echo $this->Html->css(array ('cake.generic','bootstrap-theme.min.css','bootstrap.min.css', 'zeroes.css'));
+		//echo $this->Html->css(array ('cake.generic','materialize.css','bootstrap-theme.min.css','bootstrap.min.css', 'zeroes.css'));
+		echo $this->Html->css(array ('cake.generic','bootstrap-theme.min.css', 'bootstrap.min.css', 'zeroes.css'));
 		echo $this->Html->css(array ('syntax/shCore.css', 'syntax/shCoreDefault.css', 'syntax/shThemeDefault.css'));
-        echo $this->Html->script(array ('https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js','bootstrap.min.js'));
+        	echo $this->Html->script(array ('https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js','bootstrap.min.js'));
 		echo $this->Html->script(array ('syntax/shCore.js', 'syntax/shBrushPython.js'));
 		echo $this->Html->script(array ('syntax/shBrushPlain.js', 'syntax/shBrushJava.js'));
 		echo '<script type="text/javascript">SyntaxHighlighter.all(); SyntaxHighlighter.defaults.toolbar = false;</script>';

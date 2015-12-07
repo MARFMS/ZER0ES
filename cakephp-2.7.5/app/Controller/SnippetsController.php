@@ -15,7 +15,8 @@ class SnippetsController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator', 'Flash', 'Session');
+	public $components = array('Paginator', 'Flash', 'Session', 'RequestHandler');
+	public $helpers = array('Js');
 
 /**
  * index method
@@ -25,6 +26,7 @@ class SnippetsController extends AppController {
 	public function index() {
 		$this->Snippet->recursive = 2;
 		$this->set('snippets', $this->Paginator->paginate());
+		$this->set('asd', $this->User);
 	}
 
 /**
@@ -215,6 +217,10 @@ class SnippetsController extends AppController {
 	    }
 
 	    return parent::isAuthorized($user);
+	}
+
+	function hi(){
+		echo "Hi, world!";
 	}
 
 

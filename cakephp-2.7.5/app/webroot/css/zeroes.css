@@ -12,11 +12,14 @@ body{
 .username {
     font-size: 14px;
     font-family: 'Atlas Mono Regular';
+    margin-left: -36px;
+    margin-top: 15px;
 }
 
 .description {
     font-family: 'Atlas Sans Bold';
     font-size: 15px;
+    margin-top: 20px;
 }
 
 a {
