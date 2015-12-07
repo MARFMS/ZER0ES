@@ -210,6 +210,9 @@ pre {
     line-height: 1.42857143;
     white-space: nowrap;
 }
+nav.navbar .navbar-header .navbar-form .text {
+    display: inline-block;
+}
 
 /* menu_end*/
 
