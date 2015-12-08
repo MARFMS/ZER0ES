@@ -131,7 +131,7 @@ class SnippetsController extends AppController {
 
 		for ($i= 0; $i<count($tokens); ++$i) {
 			$result = $this->Snippet->find('all', array(
-				'conditions' => array('Snippet.language' => $tokens[$i])
+				'conditions' => array('Snippet.language' => $tokens[$i], 'Snippet.is_public' => 1)
 			));
 			$results = array_merge($results, $result);
 		}
@@ -147,7 +147,9 @@ class SnippetsController extends AppController {
 			}
 
 			for ($k=0; $k<count($snippet_ids); ++$k) {
-				$options = array('conditions' => array('Snippet.' . $this->Snippet->primaryKey => $snippet_ids[$k]));
+				$options = array(
+					'conditions' => array('Snippet.' . $this->Snippet->primaryKey => $snippet_ids[$k], 'Snippet.is_public' => 1)
+				);
 				$result = $this->Snippet->find('first', $options);
 				array_push($results, $result);
 			}
