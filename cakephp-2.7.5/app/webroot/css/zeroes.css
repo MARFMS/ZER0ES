@@ -229,12 +229,12 @@ nav.navbar .navbar-collapse .mn_search .navbar-form .text {
 .add-snippet {
     position: fixed;
     top: 125px;
-    right: 280px;
+    right: 350px;
     z-index: 99999999;
     background-color: #222;
     color: #fff;
     padding: 20px;
-    width: 280px;
+    width: 350px;
     border-radius: 3px 0 0 3px;
 }
 /* End add snippet toggle*/
