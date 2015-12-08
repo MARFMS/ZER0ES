@@ -17,6 +17,7 @@ class SnippetsController extends AppController {
  */
 	public $components = array('Paginator', 'Flash', 'Session', 'RequestHandler');
 	public $helpers = array('Js');
+	public $uses = array('Snippet','Tag');
 
 /**
  * index method
@@ -111,6 +112,11 @@ class SnippetsController extends AppController {
 		return $this->redirect(array('controller' => 'users', 'action' => 'profile'));
 	}
 	
+/**
+ * search method
+ *
+ * @return void
+ */
 	public function search() {
 		$search_text = $this->request->data['search-text'];
 		$tokens = array();
@@ -130,7 +136,35 @@ class SnippetsController extends AppController {
 			$results = array_merge($results, $result);
 		}
 
-		
+		for ($i= 0; $i<count($tokens); ++$i) {
+			$tags = $this->Snippet->Tag->find('all', array(
+				'conditions' => array('Tag.tag' => $tokens[$i])
+			));
+
+			$snippet_ids = array();
+			for ($j=0; $j<count($tags); ++$j) {
+				array_push($snippet_ids, $tags[$j]['Snippet']['id']);
+			}
+
+			for ($k=0; $k<count($snippet_ids); ++$k) {
+				$options = array('conditions' => array('Snippet.' . $this->Snippet->primaryKey => $snippet_ids[$k]));
+				$result = $this->Snippet->find('first', $options);
+				array_push($results, $result);
+			}
+
+		}
+
+		// removes duplicates
+		for ($i=0; $i<count($results); ++$i) {
+			$this_id = $results[$i]['Snippet']['id'];
+			for ($j=$i+1; $j<count($results); ++$j) {
+				if ($results[$i]['Snippet']['id'] == $results[$j]['Snippet']['id']) {
+					unset($results[$j]);
+					$results = array_values($results); // 'reindex' array
+					--$j;
+				}
+			}
+		}
 
 		$this->set('snippets', $results);
 	}
