@@ -3,13 +3,7 @@
   <div class="add-info-snippet">
 	<h3>Snippet</h3>
 	<div>
-		<?php 
-		echo $this->Form->create('Snippet');
-		echo $this->Form->hidden('user_id', array('value'=>$authUser['id']));
-		echo $this->Form->input('description');
-		echo $this->Form->input('language');
-		echo $this->Form->input('content', array('type' => 'textarea', 'rows' => 5, 'cols' => 10));
-		echo $this->Form->end(__('Submit')); ?>
+		<?php echo $this->element('addnewsnippet'); ?>
 	</div>
   </div>       
 </div>

@@ -231,14 +231,15 @@ nav.navbar .navbar-collapse .mn_search .navbar-form .text {
     top: 125px;
     right: 350px;
     z-index: 99999999;
-    background-color: #222;
-    color: #fff;
+    background-color: #222;    
     padding: 20px;
     width: 350px;
     border-radius: 3px 0 0 3px;
 }
 /* End add snippet toggle*/
-
+.add-snippet .add-info-snippet .form-snippets-add .form{
+	color:black;
+}
 /*
 ** Font faces
 */
