@@ -37,6 +37,11 @@
 				<?php echo "<pre style='font-family:Monospace;'>".h($snippet['Snippet']['content'])."</pre>"; ?>
 				&nbsp;
 			</dd>
+			<dt><?php echo __('Share'); ?></dt>
+			<dd>
+				<?php echo "<p>Copy this URL in your browser bar to view this snippet: </p>"."<a style='margin-left:2em;' href='http://localhost".$this->here."'>localhost".$this->here."</a>"; ?>
+				&nbsp;
+			</dd>
 		</dl>
 	</div>
 
