@@ -44,6 +44,6 @@
 	<?php echo $this->element('menu'); ?>
 	<?php echo $this->Flash->render(); ?>
 	<?php echo $this->fetch('content'); ?>
-	<?php echo $this->element('addsnippet');?>	
+	<?php if($this->Session->read('User.user')){echo $this->element('addsnippet');}?>	
 </body>
 </html>

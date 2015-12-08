@@ -1,3 +1,16 @@
+/*Mierda de pruebas que no funkan*/
+.navbar-default {
+    background-color: blue;
+    border-color: red;	
+}
+.am-top-header  .navbar-fixed-top{
+    background-color: brown;
+}
+nav{
+	background-color:black;
+}
+/**/
+
 html {
     font-family: sans-serif;
 }
@@ -219,6 +232,7 @@ nav.navbar .navbar-collapse .mn_search .navbar-form .text {
     line-height: 55px;
     text-align: center;
     background-color: #222;
+	color:white;
     cursor: pointer;
     left: -58px;
     width: 58px;
@@ -231,15 +245,22 @@ nav.navbar .navbar-collapse .mn_search .navbar-form .text {
     top: 125px;
     right: 350px;
     z-index: 99999999;
+	color:white;
     background-color: #222;    
     padding: 20px;
     width: 350px;
     border-radius: 3px 0 0 3px;
 }
 /* End add snippet toggle*/
-.add-snippet .add-info-snippet .form-snippets-add .form{
+.form-snippets-add .input .form{
 	color:black;
 }
+
+/*size of masonry view snippets*/
+.grid-item {width: 400px; }
+.grid-item--width2 {width: 600px; }
+.grid-item--width3 {width: 500px; }
+/**/
 /*
 ** Font faces
 */
