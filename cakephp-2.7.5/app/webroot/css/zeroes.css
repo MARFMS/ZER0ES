@@ -25,11 +25,29 @@ body{
 .username {
     font-size: 14px;
     font-family: 'Atlas Mono Regular';
+    margin-left: -20px;
+    margin-top: 15px;
 }
 
 .description {
     font-family: 'Atlas Sans Bold';
     font-size: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.comment_content {
+    margin-bottom: 25px;
+    margin-left: 25px;
+}
+
+.comment_user {
+    font-family: 'Atlas Mono Black';
+    font-size: 14px;
+}
+
+.btn_comments {
+    margin-top: 1%;
 }
 
 a {
@@ -43,10 +61,10 @@ a:hover {
 }
 
 .snippet_entry{
-    padding: 7px;
-    margin-left: 200px;
-    margin-right: 200px;
-    margin-bottom: 25px;
+    padding: 0.4%;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 4%;
     background-color: grey;
 }
 
@@ -73,6 +91,10 @@ a:hover {
     background-color: #fff;
     margin-top: 25px;
     color: gray;
+}
+
+.snippet_info_entry{
+    margin-top: 10px;
 }
 
 .container {
